@@ -5,6 +5,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langserve import add_routes
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+OPENAI_API_BASE = os.environ.get("OPENAI_API_BASE")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
 # 1. Create prompt template
 system_template = "将下面的文本翻译成 {language}:"
 prompt_template = ChatPromptTemplate.from_messages(
