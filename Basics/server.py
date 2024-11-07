@@ -20,7 +20,7 @@ prompt_template = ChatPromptTemplate.from_messages(
 )
 
 # 2. Create model
-model = ChatOpenAI()
+model = ChatOpenAI(model="qwen-max")
 
 # 3. Create parser
 parser = StrOutputParser()
